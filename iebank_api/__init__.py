@@ -3,7 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from dotenv import load_dotenv
 import os
+import pytest
 
+@pytest.fixture(autouse=True)
+def setup_database():
 app = Flask(__name__)
 
 load_dotenv()
